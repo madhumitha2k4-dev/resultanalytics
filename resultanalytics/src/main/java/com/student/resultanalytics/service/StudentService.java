@@ -37,6 +37,35 @@ public class StudentService {
     studentRepository.deleteById(id);
 }
 
+public Student getTopper() {
+    return studentRepository.findTopByOrderBySgpaDesc();
+}
+
+public List<Student> getFailedStudents() {
+    return studentRepository.findBySgpaLessThan(4.0);
+}
+
+public List<Student> getStudentsByDepartment(String department) {
+    return studentRepository.findByDepartment(department);
+}
+
+public double getAverageSgpa() {
+
+    List<Student> students = studentRepository.findAll();
+
+    if (students.isEmpty()) {
+        return 0;
+    }
+
+    double total = 0;
+
+    for (Student student : students) {
+        total += student.getSgpa();
+    }
+
+    return total / students.size();
+}
+
     public Student updateStudent(Long id, Student updatedStudent) {
 
     Student existingStudent = studentRepository.findById(id).orElse(null);

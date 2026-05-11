@@ -34,4 +34,24 @@ public class StudentController {
         studentService.deleteStudent(id);
         return "Student deleted successfully";
     }
+
+    @GetMapping("/topper")
+public Student getTopper() {
+    return studentService.getTopper();
+}
+
+@GetMapping("/failed")
+public List<Student> getFailedStudents() {
+    return studentService.getFailedStudents();
+}
+
+@GetMapping("/department/{department}")
+public List<Student> getByDepartment(@PathVariable String department) {
+    return studentService.getStudentsByDepartment(department);
+}
+
+@GetMapping("/average-sgpa")
+public double getAverageSgpa() {
+    return studentService.getAverageSgpa();
+}
 }
