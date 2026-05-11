@@ -1,5 +1,6 @@
 package com.student.resultanalytics.service;
 
+import java.util.List;
 import com.student.resultanalytics.entity.Student;
 import com.student.resultanalytics.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,5 +14,9 @@ public class StudentService {
 
     public Student saveStudent(Student student) {
         return studentRepository.save(student);
+    }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 }
