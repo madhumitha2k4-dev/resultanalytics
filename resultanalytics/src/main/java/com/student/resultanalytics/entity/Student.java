@@ -18,6 +18,13 @@ public class Student {
     private int semester;
     private String email;
 
+    private int marks1;
+    private int marks2;
+    private int marks3;
+
+    private double average;
+    private double sgpa;
+
     public Long getId() {
         return id;
     }
@@ -65,4 +72,44 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getMarks1() {
+    return marks1;
+}
+
+public void setMarks1(int marks1) {
+    this.marks1 = marks1;
+}
+
+public int getMarks2() {
+    return marks2;
+}
+
+public void setMarks2(int marks2) {
+    this.marks2 = marks2;
+}
+
+public int getMarks3() {
+    return marks3;
+}
+
+public void setMarks3(int marks3) {
+    this.marks3 = marks3;
+}
+
+public double getAverage() {
+    return average;
+}
+
+public void setAverage(double average) {
+    this.average = average;
+}
+
+public double getSgpa() {
+    return sgpa;
+}
+
+public void setSgpa(double sgpa) {
+    this.sgpa = sgpa;
+}
 }

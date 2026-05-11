@@ -13,6 +13,15 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public Student saveStudent(Student student) {
+        double average =
+            (student.getMarks1()
+            + student.getMarks2()
+            + student.getMarks3()) / 3.0;
+
+    double sgpa = average / 10;
+
+    student.setAverage(average);
+    student.setSgpa(sgpa);
         return studentRepository.save(student);
     }
 
