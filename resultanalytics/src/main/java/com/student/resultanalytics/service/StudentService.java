@@ -33,9 +33,8 @@ public class StudentService {
     return studentRepository.findById(id).orElse(null);
 }
 
-    public String deleteStudent(Long id) {
+    public void deleteStudent(Long id) {
     studentRepository.deleteById(id);
-    return "Student deleted successfully";
 }
 
     public Student updateStudent(Long id, Student updatedStudent) {

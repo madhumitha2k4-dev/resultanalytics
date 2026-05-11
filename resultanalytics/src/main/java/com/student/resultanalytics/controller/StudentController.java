@@ -4,6 +4,7 @@ import com.student.resultanalytics.entity.Student;
 import com.student.resultanalytics.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -19,24 +20,18 @@ public class StudentController {
     }
 
     @GetMapping
-public List<Student> getAllStudents() {
-    return studentService.getAllStudents();
-}
+    public List<Student> getAllStudents() {
+        return studentService.getAllStudents();
+    }
 
     @GetMapping("/{id}")
-public Student getStudentById(@PathVariable Long id) {
-    return studentService.getStudentById(id);
-}
+    public Student getStudentById(@PathVariable Long id) {
+        return studentService.getStudentById(id);
+    }
 
     @DeleteMapping("/{id}")
-public String deleteStudent(@PathVariable Long id) {
-    return studentService.deleteStudent(id);
-}
-
-    @PutMapping("/{id}")
-public Student updateStudent(@PathVariable Long id,
-                             @RequestBody Student student) {
-
-    return studentService.updateStudent(id, student);
-}
+    public String deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return "Student deleted successfully";
+    }
 }
