@@ -28,4 +28,9 @@ public Student getStudentById(@PathVariable Long id) {
     return studentService.getStudentById(id);
 }
 
+    @DeleteMapping("/{id}")
+public String deleteStudent(@PathVariable Long id) {
+    return studentService.deleteStudent(id);
+}
+
 }
