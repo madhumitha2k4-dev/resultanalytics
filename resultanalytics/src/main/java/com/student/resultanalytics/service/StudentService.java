@@ -28,4 +28,23 @@ public class StudentService {
     studentRepository.deleteById(id);
     return "Student deleted successfully";
 }
+
+    public Student updateStudent(Long id, Student updatedStudent) {
+
+    Student existingStudent = studentRepository.findById(id).orElse(null);
+
+    if (existingStudent != null) {
+
+        existingStudent.setName(updatedStudent.getName());
+        existingStudent.setUsn(updatedStudent.getUsn());
+        existingStudent.setDepartment(updatedStudent.getDepartment());
+        existingStudent.setSemester(updatedStudent.getSemester());
+        existingStudent.setEmail(updatedStudent.getEmail());
+
+        return studentRepository.save(existingStudent);
+    }
+
+    return null;
+}
+
 }
